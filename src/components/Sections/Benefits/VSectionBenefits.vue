@@ -1,21 +1,25 @@
 <template>
-  <section id="purchasing" class="benefits">
-    <div class="benefits_title">
-      <VHtag size="lg"> <span> By purchasing a </span>NFT tree token you get: </VHtag>
-    </div>
-    <div class="benefits_row">
-      <div v-for="item in dataItem" :key="item.id" class="benefits_item">
-        <div class="benefits-item_image">
-          <img :src="item.img" alt="img-benefist" />
+  <section id="purchasing">
+    <div class="benefits">
+      <div class="benefits_title">
+        <VHtag size="lg"> <span> By purchasing a </span>NFT tree token you get: </VHtag>
+      </div>
+      <div class="benefits_row">
+        <div v-for="item in dataItem" :key="item.id" class="benefits_item">
+          <div class="benefits-item_image">
+            <img :src="item.img" alt="img-benefist" />
+          </div>
+          <VTypography size="md">{{ item.text }}</VTypography>
         </div>
-        <VTypography size="md">{{ item.text }}</VTypography>
       </div>
     </div>
+    <VSectionBenefitsPrice />
   </section>
 </template>
 
 <script setup>
   import VHtag from '@comps/UI/Htag/VHtag.vue';
+  import VSectionBenefitsPrice from './VSectionBenefistPrice.vue';
   import BenefitsImage1 from '@/assets/benefits1.png';
   import BenefitsImage2 from '@/assets/benefits2.png';
   import BenefitsImage3 from '@/assets/benefits3.png';

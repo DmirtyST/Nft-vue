@@ -1,6 +1,6 @@
 <template>
   <VContainer width="1128">
-    <section id="classic" class="price">
+    <div class="price">
       <div class="price_row">
         <div class="price_title">
           <VHtag size="lg" size-sub="lg">
@@ -35,7 +35,7 @@
           </div>
         </VContainer>
       </div>
-    </section>
+    </div>
   </VContainer>
 </template>
 

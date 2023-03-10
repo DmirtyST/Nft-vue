@@ -40,6 +40,7 @@
 <style lang="scss" scoped>
   .screen {
     height: auto;
+    padding-top: 152px;
     margin-bottom: 80px;
     &_row {
       position: relative;

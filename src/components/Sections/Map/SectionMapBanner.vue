@@ -1,5 +1,5 @@
 <template>
-  <section class="banner">
+  <div class="banner">
     <VContainer width="987">
       <div class="banner_row">
         <div class="banner_eclipse"></div>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </VContainer>
-  </section>
+  </div>
 </template>
 
 <script setup>

@@ -1,32 +1,35 @@
 <template>
-  <section id="sequoia" name="sequoia" class="sectionMap">
-    <img class="sectionMap_img" :src="SectionMapBg" alt="image-map" />
-    <VSectionMapAnimation />
-    <VContainer width="950">
-      <div class="sectionMap_row">
-        <div class="sectionMap_title">
-          <VHtag size="xl" size-sub="xl">
-            Another NFT collection?
-            <template v-slot:span>
-              <div class="sectionMap-title_sub">NOt only!</div>
-            </template>
-          </VHtag>
+  <section id="sequoia">
+    <div name="sequoia" class="sectionMap">
+      <img class="sectionMap_img" :src="SectionMapBg" alt="image-map" />
+      <VSectionMapAnimation />
+      <VContainer width="950">
+        <div class="sectionMap_row">
+          <div class="sectionMap_title">
+            <VHtag size="xl" size-sub="xl">
+              Another NFT collection?
+              <template v-slot:span>
+                <div class="sectionMap-title_sub">NOt only!</div>
+              </template>
+            </VHtag>
+          </div>
+          <div class="sectionMap_image">
+            <picture>
+              <source :srcset="SectionMapImageWebp" />
+              <img :src="SectionMapImage" alt="mapimg" />
+            </picture>
+          </div>
+          <div class="sectionMap_description">
+            <VTypography size="xl" size-span="xl">
+              <span>Sequoia NFT Park</span> is <span>1,000</span> sequoia seedlings
+              planted on a <span>50-hectare</span> plot of land in Albota de Sus, Moldova
+            </VTypography>
+            <VButton color="minimal">Explore NFT Park</VButton>
+          </div>
         </div>
-        <div class="sectionMap_image">
-          <picture>
-            <source :srcset="SectionMapImageWebp" />
-            <img :src="SectionMapImage" alt="mapimg" />
-          </picture>
-        </div>
-        <div class="sectionMap_description">
-          <VTypography size="xl" size-span="xl">
-            <span>Sequoia NFT Park</span> is <span>1,000</span> sequoia seedlings planted
-            on a <span>50-hectare</span> plot of land in Albota de Sus, Moldova
-          </VTypography>
-          <VButton color="minimal">Explore NFT Park</VButton>
-        </div>
-      </div>
-    </VContainer>
+      </VContainer>
+    </div>
+    <SectionMapBanner />
   </section>
 </template>
 
@@ -38,6 +41,7 @@
   import VContainer from '@comps/UI/Container/VContainer.vue';
   import VHtag from '@comps/UI/Htag/VHtag.vue';
   import VTypography from '@comps/UI/Typography/VTypography.vue';
+  import SectionMapBanner from './SectionMapBanner.vue';
   import VSectionMapAnimation from './VSectionMapAnimation.vue';
 </script>
 

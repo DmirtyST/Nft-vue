@@ -1,9 +1,9 @@
 <template>
-  <div id="roadmap" class="wrapper">
+  <section id="roadmap" class="wrapper">
     <img class="roadmap_image" :src="roadMapBg" alt="image" />
 
     <VContainer width="1128">
-      <section class="roadmap">
+      <div class="roadmap">
         <div class="roadmap_slider">
           <div class="roadmap_title">
             <VHtag :icon="true" size-sub="xl">
@@ -69,9 +69,9 @@
             </swiper-slide>
           </swiper>
         </div>
-      </section>
+      </div>
     </VContainer>
-  </div>
+  </section>
 </template>
 
 <script setup>

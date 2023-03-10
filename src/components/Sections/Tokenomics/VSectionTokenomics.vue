@@ -1,6 +1,6 @@
 <template>
   <VContainer width="1128">
-    <div id="tokemonics" class="tokenomics">
+    <section id="tokemonics" class="tokenomics">
       <VContainer width="950">
         <div class="tokenomics_row">
           <div class="tokenomics_title">
@@ -42,7 +42,7 @@
           </div>
         </div>
       </VContainer>
-    </div>
+    </section>
   </VContainer>
 </template>
 
