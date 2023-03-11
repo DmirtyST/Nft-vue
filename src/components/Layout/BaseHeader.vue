@@ -126,8 +126,9 @@
 
     &_line {
       width: 100%;
-      height: 2px;
-      background-color: rgba(#c2e978, 0.4);
+      height: 1px;
+      background-color: rgba(rgb(94, 93, 93), 0.6);
+
       position: absolute;
       left: 0;
       bottom: 0;
