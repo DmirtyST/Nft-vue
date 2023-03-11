@@ -27,6 +27,7 @@
 
       <div class="collection_row">
         <div
+          ref="item"
           v-for="item in dataItem"
           :key="item.id"
           :style="{'background-color': item.color}"
@@ -36,7 +37,7 @@
             <img :src="item.img" alt="" />
           </div>
         </div>
-        <div class="collection_banner">
+        <div @click="toggleRect" class="collection_banner">
           <VContainer width="1060px">
             <div class="collection-banner_row">
               <VSvg id="boat" width="56" height="56" />
@@ -65,7 +66,9 @@
   import VHtag from '@comps/UI/Htag/VHtag.vue';
   import VTypography from '@comps/UI/Typography/VTypography.vue';
   import VButton from '@comps/UI/Button/VButton.vue';
-
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
   const dataItem = [
     {id: 1, img: collectionImg1, color: '#24d489'},
     {id: 2, img: collectionImg2, color: '#ffd326'},
@@ -129,6 +132,7 @@
       padding: 32px;
       grid-column-start: 1;
       grid-column-end: -1;
+      cursor: pointer;
     }
 
     &-banner {

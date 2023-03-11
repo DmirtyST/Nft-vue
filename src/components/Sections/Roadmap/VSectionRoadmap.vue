@@ -2,81 +2,80 @@
   <section id="roadmap" class="wrapper">
     <img class="roadmap_image" :src="roadMapBg" alt="image" />
 
-    <VContainer width="1128">
-      <div class="roadmap">
-        <div class="roadmap_slider">
-          <div class="roadmap_title">
-            <VHtag :icon="true" size-sub="xl">
-              <template v-slot:span>roadmap</template>
-            </VHtag>
-          </div>
-          <swiper
-            :slidesPerView="4.6"
-            :loop="true"
-            :grabCursor="true"
-            :space-between="5"
-            :modules="modules"
-            :speed="600"
-            :breakpoints="{
-              300: {
-                slidesPerView: 1.5,
-              },
-              400: {
-                slidesPerView: 2.2,
-              },
-              600: {
-                slidesPerView: 2.8,
-              },
-              800: {
-                slidesPerView: 3.2,
-              },
-              1000: {
-                slidesPerView: 4.3,
-              },
-              1400: {
-                slidesPerView: 4.6,
-              },
-              1550: {
-                slidesPerView: 5.6,
-              },
-            }"
-            :autoplay="{
-              delay: 2500,
-              disableOnInteraction: true,
-            }"
-            @swiper="onSwiper"
-            @slideChange="onSlideChange"
-          >
-            <swiper-slide
-              v-slot="{isActive}"
-              v-for="(item, index) in dataSlider"
-              :key="item.id"
-            >
-              <div :class="[isActive ? 'roadmap_slide active' : 'roadmap_slide']">
-                <VSvg
-                  :style="[
-                    isActive ? 'fill:#C2E978;' : 'fill:#7E839A;',
-                    'transition: all 0.4s',
-                  ]"
-                  class="roadmap-slide_svg"
-                  width="56"
-                  height="56"
-                  :id="item.icon"
-                />
-
-                <p class="roadmap-slide_text">{{ item.text }}</p>
-              </div>
-            </swiper-slide>
-          </swiper>
+    <div class="roadmap">
+      <div class="roadmap_slider">
+        <div class="roadmap_title">
+          <VHtag :icon="true" size-sub="xl">
+            <template v-slot:span>roadmap</template>
+          </VHtag>
         </div>
+        <swiper
+          :slidesPerView="5.5"
+          :loop="true"
+          :grabCursor="true"
+          :space-between="5"
+          :modules="modules"
+          :speed="600"
+          :breakpoints="{
+            1550: {
+              slidesPerView: 5.5,
+            },
+
+            1200: {
+              slidesPerView: 5.4,
+            },
+
+            900: {
+              slidesPerView: 4.2,
+            },
+
+            700: {
+              slidesPerView: 3.7,
+            },
+
+            500: {
+              slidesPerView: 2.7,
+            },
+
+            300: {
+              slidesPerView: 1.9,
+            },
+          }"
+          :autoplay="{
+            delay: 2500,
+            disableOnInteraction: true,
+          }"
+          @swiper="onSwiper"
+          @slideChange="onSlideChange"
+        >
+          <swiper-slide
+            v-slot="{isActive}"
+            v-for="(item, index) in dataSlider"
+            :key="item.id"
+          >
+            <div :class="[isActive ? 'roadmap_slide active' : 'roadmap_slide']">
+              <VSvg
+                :style="[
+                  isActive ? 'fill:#C2E978;' : 'fill:#7E839A;',
+                  'transition: all 0.4s',
+                ]"
+                class="roadmap-slide_svg"
+                width="56"
+                height="56"
+                :id="item.icon"
+              />
+
+              <p class="roadmap-slide_text">{{ item.text }}</p>
+            </div>
+          </swiper-slide>
+        </swiper>
       </div>
-    </VContainer>
+    </div>
   </section>
 </template>
 
 <script setup>
   import roadMapBg from '@/assets/RoadmapImg.png';
-  import VContainer from '@comps/UI/Container/VContainer.vue';
   import {Swiper, SwiperSlide} from 'swiper/vue';
   import {Autoplay, Mousewheel} from 'swiper';
   import 'swiper/css';
@@ -123,8 +122,8 @@
   .roadmap {
     height: 384px;
     min-height: 384px;
-    width: 100%;
 
+    padding-left: calc((100% - 1128px) / 2 + 15px);
     z-index: 2;
     position: relative;
     display: flex;
@@ -168,7 +167,7 @@
 
     &-slide {
       &_text {
-        font-family: PlayfairDisplay;
+        font-family: 'Playfair Display';
         font-size: 20px;
         font-weight: 400;
         line-height: 28px;
@@ -190,7 +189,11 @@
       z-index: -1;
     }
   }
-
+  @media (max-width: 1123px) {
+    .roadmap {
+      margin-left: 30px;
+    }
+  }
   @media (max-width: 800px) {
     .wrapper {
       margin-bottom: 50px;
@@ -198,6 +201,7 @@
     .roadmap {
       height: auto;
       min-height: auto;
+
       &_title {
         padding-left: 0px;
         margin-bottom: 20px;
@@ -207,12 +211,10 @@
       }
     }
   }
-
-  @media (min-width: 1550px) {
+  @media (max-width: 576px) {
     .roadmap {
-      &_slider {
-        width: 140%;
-        height: auto;
+      &_slide {
+        height: 300px;
       }
     }
   }

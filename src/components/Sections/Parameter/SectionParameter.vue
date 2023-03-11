@@ -53,6 +53,7 @@
   .parameter {
     min-height: 384px;
     margin-bottom: 40px;
+    scroll-snap-align: start;
     &_row {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -76,7 +77,8 @@
       gap: 4px;
       transition: all ease 0.4s;
       &:hover {
-        transform: scaleZ(1.1);
+        transition: all ease 0.4s;
+        background: #21263c;
       }
     }
   }

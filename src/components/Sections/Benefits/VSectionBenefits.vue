@@ -85,6 +85,11 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      transition: all ease 0.4s;
+      &:hover {
+        transition: all ease 0.4s;
+        background: #21263c;
+      }
     }
 
     &-item {

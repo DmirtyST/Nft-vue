@@ -39,7 +39,6 @@
           trigger: section,
           start: 'top center',
           end: 'bottom center',
-
           onToggle: (self) => {
             if (self.isActive) {
               links[i].classList.add('active');
@@ -68,4 +67,9 @@
   });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .home {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+  }
+</style>
